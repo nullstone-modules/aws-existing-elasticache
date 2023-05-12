@@ -8,13 +8,8 @@ output "db_protocol" {
   description = "string ||| This emits `rediss` (secure) or `redis` and is used for generalized data store contracts."
 }
 
-locals {
-  port            = data.aws_elasticache_replication_group.this.port
-  single_endpoint = format("%s:%s", try(data.aws_elasticache_replication_group.this.primary_endpoint_address, ""), local.port)
-}
-
 output "db_endpoint" {
-  value       = local.single_endpoint
+  value       = "${local.address}:${local.port}"
   description = "string ||| The endpoint URL to access Redis."
 }
 
