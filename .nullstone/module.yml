@@ -1,0 +1,13 @@
+org_name: nullstone
+name: aws-existing-elasticache
+friendly_name: Existing Elasticache
+description: Import an existing Elasticache cluster
+category: datastore
+subcategory: ""
+provider_types:
+    - aws
+platform: redis
+subplatform: elasticache
+type: ""
+appCategories: []
+is_public: true
