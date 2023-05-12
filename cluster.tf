@@ -25,7 +25,7 @@ locals {
 }
 
 data "validation_error" "security_group_id" {
-  condition = contains(local.security_group_ids, var.security_group_id)
+  condition = !contains(local.security_group_ids, var.security_group_id)
   summary   = "The specified var.security_group_id is not attached to the Elasticache cluster."
   details   = <<EOF
 The security group is used to open network access to the Elasticache cluster.
