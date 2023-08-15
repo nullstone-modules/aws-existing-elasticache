@@ -1,5 +1,5 @@
 data "aws_elasticache_cluster" "this" {
-  cluster_id = "${var.cluster_id}-001"
+  cluster_id = var.cluster_id
 }
 
 data "aws_elasticache_replication_group" "this" {
