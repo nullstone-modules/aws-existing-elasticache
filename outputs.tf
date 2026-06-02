@@ -17,3 +17,13 @@ output "db_security_group_id" {
   value       = var.security_group_id
   description = "string ||| The ID of the security group attached to Elasticache cluster."
 }
+
+output "primary_host" {
+  value       = local.address
+  description = "string ||| The primary redis host for writes and reads"
+}
+
+output "reader_host" {
+  value       = coalesce(local.reader_address, local.node_addr)
+  description = "string ||| The primary redis host for reads"
+}

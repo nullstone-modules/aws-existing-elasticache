@@ -1,3 +1,6 @@
+# 0.0.8 (Jun 1, 2026)
+* Added `primary_host` and `reader_host` outputs.
+
 # 0.0.7 (Aug 14, 2023)
 * Revert enforcement to find first cache node to accommodate old single-node clusters.
 

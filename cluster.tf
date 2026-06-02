@@ -13,6 +13,7 @@ locals {
 
   auth_token_enabled  = try(data.aws_elasticache_replication_group.this[0].auth_token_enabled, false)
   replication_address = try(data.aws_elasticache_replication_group.this[0].primary_endpoint_address, "")
+  reader_address      = try(data.aws_elasticache_replication_group.this[0].reader_endpoint_address, "")
   replication_port    = try(data.aws_elasticache_replication_group.this[0].port, null)
 
   node_addrs = [for cn in data.aws_elasticache_cluster.this.cache_nodes : cn.address]
